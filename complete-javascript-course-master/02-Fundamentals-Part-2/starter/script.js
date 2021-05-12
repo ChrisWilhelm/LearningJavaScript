@@ -60,5 +60,28 @@ function fruitProcessor(apples, oranges) {
     return juice;
 }
 
-console.log(fruitProcessor(5, 3)); */
+console.log(fruitProcessor(5, 3));
+
+const friends = ['mike', 'steve', 'pete'];
+console.log(friends);
+
+const years = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+friends.push('chris');
+console.log(friends.length);
+console.log(friends);
+friends.unshift('matt'); //add front
+console.log(friends);
+
+friends.pop(); //remove last
+console.log(friends);
+
+friends.shift(); //remove first
+console.log(friends);
+
+console.log(friends.indexOf('mike'));
+
+console.log(friends.includes('pete'));
+*/
 
