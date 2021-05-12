@@ -83,5 +83,58 @@ console.log(friends);
 console.log(friends.indexOf('mike'));
 
 console.log(friends.includes('pete'));
+
+const person = {
+    firstname: 'chris',
+    lastname: 'wilhelm',
+    age: 2021 - 2001,
+    job: 'student',
+    license: true,
+
+    getSummary: function () {
+        return `${this.firstname} is a ${this.age}-year old ${this.job} and he has ${this.license ? 'a' : 'no'} driver's license.`
+    }
+};
+
+console.log(person.firstname);
+console.log(person['lastname']);
+
+const info = prompt("What do you want to know about person? choose between firstname, lastname, age, and job");
+if (person[info]) {
+    console.log(person[info]);
+} else {
+    console.log("incorrect entry");
+}
+
+person.gender = 'male';
+person['location'] = 'floridan';
+console.log(person);
+console.log(person.getSummary());
 */
+
+const mark = {
+    name: 'mark',
+    mass: 78,
+    height: 1.69,
+
+    calcBMI: function () {
+        this.BMI = this.mass / (this.height ** 2);
+    }
+}
+
+const john = {
+    name: 'john',
+    mass: 92,
+    height: 1.95,
+
+    calcBMI: function () {
+        this.BMI = this.mass / (this.height ** 2);
+    }
+}
+
+mark.calcBMI();
+john.calcBMI();
+console.log(`${john.BMI > mark.BMI ? john.name : mark.name}'s BMI (${john.BMI > mark.BMI ? john.BMI : mark.BMI}) is higher 
+than ${john.BMI > mark.BMI ? mark.name : john.name}'s BMI (${john.BMI > mark.BMI ? mark.BMI : john.BMI})`);
+
 
