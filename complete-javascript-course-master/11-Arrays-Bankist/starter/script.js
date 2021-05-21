@@ -189,7 +189,7 @@ btnSort.addEventListener('click', function (e) {
   e.preventDefault();
   displayMovement(currentAccount, !sorted);
   sorted = !sorted;
-});
+}); /*
 
 // const balance = function (accounts) {
 //   accounts.forEach(function (acc) {
@@ -209,7 +209,7 @@ const totalDepositsUSD = movements
   .map(mov => mov * 1.1)
   .reduce((acc, mov) => acc + mov, 0);
 console.log(totalDepositsUSD);
-*/
+*/ /*
 /*
 const deposits = movements.filter(function (mov) {
   return mov > 0;
@@ -361,6 +361,7 @@ const dogs = [
 
 GOOD LUCK 😀
 */
+/*
 const dogs = [
   { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
   { weight: 8, curFood: 200, owners: ['Matilda'] },
@@ -414,4 +415,4 @@ const dogs2 = dogs.slice();
 dogs2.sort(function (e1, e2) {
   return e1.recFood - e2.recFood;
 });
-console.log(dogs2);
+console.log(dogs2); */
