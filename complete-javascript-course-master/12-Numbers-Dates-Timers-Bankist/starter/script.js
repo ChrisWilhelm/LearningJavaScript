@@ -213,7 +213,7 @@ let currentAccount;
 // const hour = now.getHours();
 // const minute = now.getMinutes();
 // labelDate.textContent = `${day}/${month}/${year}, ${hour}:${minute}`;
-
+let timer;
 const startLogOutTimer = function () {
   let time = 300; //5 mins
   const logOut = setInterval(function () {
@@ -227,6 +227,7 @@ const startLogOutTimer = function () {
       containerApp.style.opacity = 0;
     }
   }, 1000);
+  return logOut;
 };
 
 btnLogin.addEventListener('click', function (e) {
@@ -269,7 +270,8 @@ btnLogin.addEventListener('click', function (e) {
     // Clear input fields
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
-    startLogOutTimer();
+    if (timer) clearInterval(timer);
+    timer = startLogOutTimer();
     // Update UI
     updateUI(currentAccount);
   }
@@ -296,6 +298,8 @@ btnTransfer.addEventListener('click', function (e) {
     const currDate = new Date();
     currentAccount.movementsDates.push(currDate.toISOString());
     receiverAcc.movementsDates.push(currDate.toISOString());
+    if (timer) clearInterval(timer);
+    timer = startLogOutTimer();
     // Update UI
     updateUI(currentAccount);
   }
@@ -316,6 +320,8 @@ btnLoan.addEventListener('click', function (e) {
       updateUI(currentAccount);
     }, 2500);
   }
+  if (timer) clearInterval(timer);
+  timer = startLogOutTimer();
   inputLoanAmount.value = '';
 });
 
