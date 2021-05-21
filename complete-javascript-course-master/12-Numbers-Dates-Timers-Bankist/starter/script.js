@@ -223,6 +223,7 @@ const startLogOutTimer = function () {
     time--;
     if (time === 0) {
       clearInterval(logOut);
+      labelWelcome.textContent = 'Login to get started';
       containerApp.style.opacity = 0;
     }
   }, 1000);
