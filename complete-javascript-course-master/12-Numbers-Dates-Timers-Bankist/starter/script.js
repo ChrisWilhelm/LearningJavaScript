@@ -221,7 +221,7 @@ const startLogOutTimer = function () {
     const sec = time % 60;
     labelTimer.textContent = `${min}:${sec < 10 ? '0' + sec : sec}`;
     time--;
-    if (time === 0) {
+    if (time === -1) {
       clearInterval(logOut);
       labelWelcome.textContent = 'Login to get started';
       containerApp.style.opacity = 0;
